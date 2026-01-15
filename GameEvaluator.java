@@ -1,5 +1,5 @@
 /**
- * Evaluates board positions for AI decision-making.
+ * Evaluates board positions for computer's decisions.
  */
 public class GameEvaluator {
 

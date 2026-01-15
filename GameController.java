@@ -17,7 +17,7 @@ public class GameController {
         this.scanner = scanner;
         this.computerMoves = new ArrayList<>();
         this.humanMoves = new ArrayList<>();
-        this.thinkingTimeSeconds = 5; // default
+        this.thinkingTimeSeconds = 5; // default to 5 seconds
     }
 
     /**
@@ -134,7 +134,7 @@ public class GameController {
      */
     private void playComputerMove() {
         System.out.println("Computer is thinking (<= " + thinkingTimeSeconds + " seconds)...");
-        int[] best = AIPlayer.computeBestMove(board, thinkingTimeSeconds);
+        int[] best = Computer.computeBestMove(board, thinkingTimeSeconds);
 
         if (best == null) {
             System.out.println("No legal moves remain.");

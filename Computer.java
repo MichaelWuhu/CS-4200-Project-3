@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * AI player using alpha-beta pruning with iterative deepening.
  */
-public class AIPlayer {
+public class Computer {
 
     /**
      * Find the best move for the computer using alpha-beta search.
@@ -49,7 +49,7 @@ public class AIPlayer {
                 }
             }
 
-            // Only accept results if we didn't time out during this depth
+            // Only accept results if no time out during this depth
             if (System.nanoTime() < deadline) {
                 bestScore = localBestScore;
                 bestMove = localBestMove;

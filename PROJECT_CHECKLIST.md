@@ -52,11 +52,11 @@
 
 ### 2. Sample Outputs
 **Need TWO game transcripts:**
-- [ ] One where human wins
+- [x] One where human wins
   - Run: `java Main`
   - Play through a game and let human win
   - Copy entire console output to a text file: `output_human_wins.txt`
-- [ ] One where computer wins
+- [x] One where computer wins
   - Run: `java Main`
   - Play through a game and let computer win
   - Copy entire console output to a text file: `output_computer_wins.txt`
