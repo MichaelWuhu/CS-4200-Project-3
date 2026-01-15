@@ -46,7 +46,7 @@ public class GameController {
             // Check for win or draw
             int winner = board.checkWinner();
             if (winner == 1) {
-                System.out.println("I win");
+                System.out.println("computer wins");
                 return;
             } else if (winner == -1) {
                 System.out.println("you win");

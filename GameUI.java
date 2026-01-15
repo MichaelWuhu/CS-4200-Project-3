@@ -31,12 +31,12 @@ public class GameUI {
      * Print the move list showing computer vs human moves by turn.
      */
     public static void printMoveList(List<String> computerMoves, List<String> humanMoves) {
-        System.out.println("    Computer vs. Human");
+        System.out.println("    Human vs. Computer");
         int turns = Math.max(computerMoves.size(), humanMoves.size());
         for (int i = 0; i < turns; i++) {
-            String cm = (i < computerMoves.size()) ? computerMoves.get(i) : "";
             String hm = (i < humanMoves.size()) ? humanMoves.get(i) : "";
-            System.out.printf("    %d. %-3s %-3s%n", (i + 1), cm, hm);
+            String cm = (i < computerMoves.size()) ? computerMoves.get(i) : "";
+            System.out.printf("    %d. %-3s %-3s%n", (i + 1), hm, cm);
         }
         System.out.println();
     }

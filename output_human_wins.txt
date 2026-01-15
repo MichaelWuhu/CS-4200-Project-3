@@ -1,0 +1,137 @@
+CS4200 Project 3: 4-in-a-line (8x8).
+Win by getting 4 in a line in a ROW or COLUMN (no diagonals).
+X = computer, O = human.
+
+Would you like to go first? (y/n): y
+How long should the computer think about its moves (in seconds)?: 1
+
+    1 2 3 4 5 6 7 8 
+  A - - - - - - - - 
+  B - - - - - - - - 
+  C - - - - - - - - 
+  D - - - - - - - - 
+  E - - - - - - - - 
+  F - - - - - - - - 
+  G - - - - - - - - 
+  H - - - - - - - - 
+
+    Human vs. Computer
+
+Enter your move (e.g., e5): e5
+
+    1 2 3 4 5 6 7 8 
+  A - - - - - - - - 
+  B - - - - - - - - 
+  C - - - - - - - - 
+  D - - - - - - - - 
+  E - - - - O - - - 
+  F - - - - - - - - 
+  G - - - - - - - - 
+  H - - - - - - - - 
+
+    Human vs. Computer
+    1. e5     
+
+Computer is thinking (<= 1 seconds)...
+Computer move: d4
+
+    1 2 3 4 5 6 7 8 
+  A - - - - - - - - 
+  B - - - - - - - - 
+  C - - - - - - - - 
+  D - - - X - - - - 
+  E - - - - O - - - 
+  F - - - - - - - - 
+  G - - - - - - - - 
+  H - - - - - - - - 
+
+    Human vs. Computer
+    1. e5  d4 
+
+Enter your move (e.g., e5): e6
+
+    1 2 3 4 5 6 7 8 
+  A - - - - - - - - 
+  B - - - - - - - - 
+  C - - - - - - - - 
+  D - - - X - - - - 
+  E - - - - O O - - 
+  F - - - - - - - - 
+  G - - - - - - - - 
+  H - - - - - - - - 
+
+    Human vs. Computer
+    1. e5  d4 
+    2. e6     
+
+Computer is thinking (<= 1 seconds)...
+Computer move: e4
+
+    1 2 3 4 5 6 7 8 
+  A - - - - - - - - 
+  B - - - - - - - - 
+  C - - - - - - - - 
+  D - - - X - - - - 
+  E - - - X O O - - 
+  F - - - - - - - - 
+  G - - - - - - - - 
+  H - - - - - - - - 
+
+    Human vs. Computer
+    1. e5  d4 
+    2. e6  e4 
+
+Enter your move (e.g., e5): e7
+
+    1 2 3 4 5 6 7 8 
+  A - - - - - - - - 
+  B - - - - - - - - 
+  C - - - - - - - - 
+  D - - - X - - - - 
+  E - - - X O O O - 
+  F - - - - - - - - 
+  G - - - - - - - - 
+  H - - - - - - - - 
+
+    Human vs. Computer
+    1. e5  d4 
+    2. e6  e4 
+    3. e7     
+
+Computer is thinking (<= 1 seconds)...
+Computer move: c4
+
+    1 2 3 4 5 6 7 8 
+  A - - - - - - - - 
+  B - - - - - - - - 
+  C - - - X - - - - 
+  D - - - X - - - - 
+  E - - - X O O O - 
+  F - - - - - - - - 
+  G - - - - - - - - 
+  H - - - - - - - - 
+
+    Human vs. Computer
+    1. e5  d4 
+    2. e6  e4 
+    3. e7  c4 
+
+Enter your move (e.g., e5): e8
+
+    1 2 3 4 5 6 7 8 
+  A - - - - - - - - 
+  B - - - - - - - - 
+  C - - - X - - - - 
+  D - - - X - - - - 
+  E - - - X O O O O 
+  F - - - - - - - - 
+  G - - - - - - - - 
+  H - - - - - - - - 
+
+    Human vs. Computer
+    1. e5  d4 
+    2. e6  e4 
+    3. e7  c4 
+    4. e8     
+
+you win
