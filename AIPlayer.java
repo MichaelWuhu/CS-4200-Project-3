@@ -11,9 +11,9 @@ public class AIPlayer {
      * Find the best move for the computer using alpha-beta search.
      * Returns null if no legal moves exist.
      */
-    public static int[] computeBestMove(Board board) {
+    public static int[] computeBestMove(Board board, int thinkingTimeSeconds) {
         long start = System.nanoTime();
-        long deadline = start + GameConstants.MOVE_TIME_LIMIT_NANOS;
+        long deadline = start + (thinkingTimeSeconds * 1_000_000_000L);
 
         List<int[]> moves = generateMoves(board);
         if (moves.isEmpty()) {

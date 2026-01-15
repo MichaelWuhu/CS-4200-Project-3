@@ -10,12 +10,14 @@ public class GameController {
     private final Scanner scanner;
     private final List<String> computerMoves;
     private final List<String> humanMoves;
+    private int thinkingTimeSeconds;
 
     public GameController(Scanner scanner) {
         this.board = new Board();
         this.scanner = scanner;
         this.computerMoves = new ArrayList<>();
         this.humanMoves = new ArrayList<>();
+        this.thinkingTimeSeconds = 5; // default
     }
 
     /**
@@ -24,6 +26,7 @@ public class GameController {
     public void playGame() {
         GameUI.printWelcome();
         boolean humanFirst = askWhoFirst();
+        askThinkingTime();
 
         GameUI.printBoard(board);
         GameUI.printMoveList(computerMoves, humanMoves);
@@ -62,15 +65,36 @@ public class GameController {
      */
     private boolean askWhoFirst() {
         while (true) {
-            System.out.print("Who moves first? Enter 1 for Human (O), 2 for Computer (X): ");
-            String input = scanner.nextLine().trim();
-            if (input.equals("1")) {
+            System.out.print("Would you like to go first? (y/n): ");
+            String input = scanner.nextLine().trim().toLowerCase();
+            if (input.equals("y") || input.equals("yes")) {
                 return true;
             }
-            if (input.equals("2")) {
+            if (input.equals("n") || input.equals("no")) {
                 return false;
             }
-            System.out.println("Invalid choice. Please enter 1 or 2.");
+            System.out.println("Invalid choice. Please enter y or n.");
+        }
+    }
+
+    /**
+     * Ask how long the computer should think.
+     */
+    private void askThinkingTime() {
+        while (true) {
+            System.out.print("How long should the computer think about its moves (in seconds)?: ");
+            String input = scanner.nextLine().trim();
+            try {
+                int seconds = Integer.parseInt(input);
+                if (seconds > 0 && seconds <= 60) {
+                    this.thinkingTimeSeconds = seconds;
+                    return;
+                } else {
+                    System.out.println("Please enter a number between 1 and 60.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number.");
+            }
         }
     }
 
@@ -109,8 +133,8 @@ public class GameController {
      * Handle a computer player move.
      */
     private void playComputerMove() {
-        System.out.println("Computer is thinking (<= 5 seconds)...");
-        int[] best = AIPlayer.computeBestMove(board);
+        System.out.println("Computer is thinking (<= " + thinkingTimeSeconds + " seconds)...");
+        int[] best = AIPlayer.computeBestMove(board, thinkingTimeSeconds);
 
         if (best == null) {
             System.out.println("No legal moves remain.");
